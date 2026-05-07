@@ -1,0 +1,284 @@
+    1  exit
+    2  cd /mnt/scratch-lustre/wjiang
+    3  pwd
+    4  ls
+    5  mkdir ./cta200
+    6  ls
+    7  rmdir ./cta200
+    8  ls
+    9  exit
+   10  git clone https://github.com/CITA/CTA200H.git
+   11  pws
+   12  pwd
+   13  touch fileread.ccp
+   14  ls
+   15  git add fileread.ccp
+   16  git pull
+   17  git pull https://github.com/CITA/CTA200H.git
+   18  git remote set-url origin https://github.com/mingzhi-wjiang/CTA200H_2026.git
+   19  ls
+   20  cd ./CTA200H
+   21  pwd
+   22  git remote set-url https://github.com/mingzhi-wjiang/CTA200H_2026.git
+   23  git add fileread.ccp
+   24  cd ..
+   25  pwd
+   26  ls
+   27  cd ./CTA200H
+   28  pwd
+   29  git add /home/wjiang/fileread.ccp
+   30  pwd
+   31  touch fileread.ccp
+   32  ls
+   33  git add fileread.ccp
+   34  git commit -m "Fixed bug in file read for large files"
+   35  git push
+   36  pwd
+   37  git push
+   38  ls
+   39  pwd
+   40  rm fileread.ccp
+   41  ls
+   42  rm fileread.ccp
+   43  ls
+   44  touch fileread.cpp
+   45  git add fileread.cpp
+   46  git commit -m "Fixed bug in file read for large files"
+   47  git push
+   48  pwd
+   49  git clone https://github.com/mingzhi-wjiang/CTA200H_2026.git
+   50  pwd
+   51  ls
+   52  git add fileread.cpp
+   53  git commit -m "Fixed bug in file read for large files"
+   54  git push
+   55  cd ..
+   56  pwd
+   57  ls
+   58  cd ./CTA200H
+   59  git push 
+   60  git push
+   61  git remote set-url origin https://github.com/mingzhi-wjiang/CTA200H_2026.git
+   62  pwd
+   63  ls
+   64  git push
+   65  /cita/local/bin/passwd
+   66  ssh -D 2400 wjiang@shrimp.cita.utoronto.ca
+   67  pwd
+   68  mkdir /home/wjiang/cta200
+   69  ls
+   70  cd /mnt/scratch-lustre/wjiang
+   71  pwd
+   72  ls
+   73  cd /home/wjiang
+   74  pwd
+   75  mkdir ./test
+   76  ls
+   77  mv ./test ./cta200
+   78  cd ./cta200
+   79  ls
+   80  rmdir ./test
+   81  ls
+   82  cd ..
+   83  pws
+   84  pwd
+   85  ls
+   86  history
+   87  cd /mnt/scratch-lustre/wjiang
+   88  pwd
+   89  ssh cosmos3
+   90  ssh cosmo3
+   91  ssh cosmo8
+   92  cd~
+   93  pwd
+   94  cd ~
+   95  pwd
+   96  mkdir ./CTA200_2026
+   97  cd ./CTA200_2026
+   98  pwd
+   99  mkdir ./assignment_1
+  100  ls
+  101  cd ./assignment_1
+  102  touch README.md
+  103  ls
+  104  vi README.md
+  105  find /home/murray Hello_world.c
+  106  find /home/murray -name "Hello_world.c"
+  107  pwd
+  108  find /home/murray -name "Hello_world.py"
+  109  cd /home
+  110  ls
+  111  cd ./wjiang
+  112  pwd
+  113  find /home/murray -type c
+  114  ls .
+  115  ls /home/murray
+  116  ls
+  117  cd ./CTA200_2026
+  118  ls
+  119  find /home/murray "Hello_world"
+  120  find /home/murray -name "Hello_world"
+  121  cd ./assignment_1
+  122  cd ..
+  123  pwd
+  124  git init -b main
+  125  git init main
+  126  git add README.md
+  127  pwd
+  128  git remote set_url origin /cita/h/home-2/wjiang/CTA200_2026/main/.git/
+  129  git add README.md
+  130  cd main
+  131  git add README.md
+  132  git add /home/wjiang/CTA200_2026/assignment_1/README.md
+  133  ls
+  134  pwd
+  135  git status
+  136  ls
+  137  cd ..
+  138  ls
+  139  git status
+  140  rm -rf main
+  141  pwd
+  142  git init
+  143  ls
+  144  git add ./assignment_1/README.md
+  145  git commit -m "Part 2 of Assignment 1"
+  146  git push
+  147  git remote add origin https://github.com/mingzhi-wjiang/CTA200_2026
+  148  git push
+  149  git status
+  150  git remote add origin https://github.com/mingzhi-wjiang/CTA200_2026.git
+  151  git branch -M main
+  152  git push -u origin main
+  153  git remote set-url origin https://github.com/[username]/[name].git
+  154  git remote set-url origin https://github.com/mingzhi-wjiang/CTA200_2026.git
+  155  git push -u origin main
+  156  git push --set-upstream origin main
+  157  git branch -v
+  158  #https://github.com/mingzhi-wjiang/CTA200_2026.git
+  159  ls
+  160  pwd
+  161  git remote set-url origin https://github.com/mingzhi-wjiang/CTA200_2026.git
+  162  git puhs
+  163  git push
+  164  git status
+  165  git branch -M main
+  166  git push -u origin main
+  167  ssh cosmo3
+  168  ssh cosmo8
+  169  ssh -L 1234:localhost:1234 wjiang@gw.cita.utoronto.ca
+  170  exit
+  171  ssh -L 8166:localhost:8166 wjiang@gw.cita.utoronto.ca
+  172  jupyter notebook --port=8166 --no-browser
+  173  pwd
+  174  ssh -L 8166:localhost:8166 cosmo8
+  175  ssh -L 8166:localhost:8166 cosmo7
+  176  exit
+  177  ssh -L 8642:localhost:8642 cosmo8
+  178  exit
+  179  ssh -L 8642:localhost:8642 wjiang@gw.cita.utoronto.ca
+  180  ssh -L 8642:localhost:8642 cosmo8
+  181  ssh -L 8166:localhost:8166 cosmo8
+  182  module load python/3.10.2
+  183  jupyter notebook --port=8166 --no-browser
+  184  /cita/local/bin/passwd
+  185  ls
+  186  cd ./CTA200_2026
+  187  ls
+  188  git clone https://github.com/mingzhi-wjiang/CTA200_2026.git
+  189  git add ./assignment_2
+  190  git commit
+  191  git status
+  192  git push
+  193  pwd
+  194  git clone https://github.com/mingzhi-wjiang/CTA200_2026.git
+  195  git status
+  196  git commit -m "Assignment 2"
+  197  git push
+  198  pwd
+  199  touch README.md
+  200  ls
+  201  vi README.md
+  202  git add README.md
+  203  git commit -m "Part 2 of Assignment 1"
+  204  git push
+  205  pwd
+  206  history
+  207  pwd
+  208  cd ./assignment_1
+  209  ls
+  210  git rm README.md
+  211  git commit
+  212  cd ~
+  213  pwd
+  214  ls
+  215  cd ./CTA200_2026
+  216  ls
+  217  mkdir ./assignment_1
+  218  ;s
+  219  ls
+  220  git commit
+  221  git push
+  222  pwd
+  223  ls
+  224  touch assignment_2/.gitkeep
+  225  rm assignment_2/.gitkeep
+  226  touch assignment_1/.gitkeep
+  227  git commit
+  228  git add assigment_1
+  229  git add ./assigment_1
+  230  ls
+  231  git status
+  232  pwd
+  233  git add assignment_1/.gitkeep
+  234  git status
+  235  git commit -m "Assignment 1 Empty Folder"
+  236  git push
+  237  exit
+  238  ssh -L 8866:localhost:8866 cosmo8
+  239  exit
+  240  ssh -L 9988:localhost:9988 cosmo8
+  241  module load python/3.10.2
+  242  jupyter notebook --port=9988 --no-browser
+  243  ssh cosmo8
+  244  find /home/murray/ -name "Hello_world.c"
+  245  ssh cosmo3
+  246  ssh cosmo8
+  247  cd /mnt/scratch-lustre/wjiang
+  248  cd /fs/lustre/scratch/wjiang
+  249  find /home/murray/ -name "Hello_world.c"
+  250  find /home/murray/ -name "Hello_world.*" 2>/dev/null
+  251  pwd
+  252  cp /home/murray/tmp/Hello_world.py
+  253  cp /home/murray/tmp/Hello_world.py /home/wjiang/CTA200_2026/assignment_1
+  254  cp /home/murray/Papers/tmp/Hello_world.c /home/wjiang/CTA200_2026/assignment_1
+  255  cd ./CTA200_2026/assignment_1
+  256  ls
+  257  mv ./Hello_world.c ./Hello_world_jiang.c/py
+  258  mv ./Hello_world.c ./Hello_world_jiang.c
+  259  ls
+  260  mv ./Hello_world.py ./Hello_world_jiang.py
+  261  ls
+  262  gcc --version
+  263  gcc ./Hello_world.c -o Hello_world.x
+  264  gcc ./Hello_world_jiang.c -o Hello_world.x
+  265  vi ./Hello_world_jiang.py
+  266  vi ./Hello_world_jiang.c
+  267  ./Hello_world.x
+  268  gcc ./Hello_world_jiang.py -o Hello_world.x
+  269  python ./Hello_world_jiang.py
+  270  history
+  271  module load python/3.10.2
+  272  python ./Hello_world_jiang.py
+  273  vi ./Hello_world_jiang.py
+  274  python ./Hello_world_jiang.py
+  275  vi ./Hello_world_jiang.c
+  276  gcc ./Hello_world_jiang.c Hello_world.x
+  277  gcc ./Hello_world_jiang.c -o Hello_world.x
+  278  Hello_world.x
+  279  ./Hello_world.x
+  280  ./Hello_world.x > output_c.txt
+  281  python Hello_world_jiang.py > output_python.txt
+  282  ls
+  283  vi output_python.txt
+  284  history > history.txt
