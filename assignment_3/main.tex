@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{CTA200 2026 Assignment 3 Q3}
+\author{Mingzhi Jiang}
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+\section*{Question 1}
+First, I generated a 2D grid of points (x, y) within the box confined by $-2 \leq x,y \leq2$ with \verb|np.linspace()| and \verb|np.meshgrid()|. Then, I created a numpy array of complex number where $c = x+iy$.
+
+I defined a function that takes in \verb|z_0|, \verb|c|, and \verb|max_iter|, then iterate $z_{i+1}=z_i^2+c$ until either \verb|z_{i+1}| is infinite under \verb|np.isinf()| or if the maximum number of iterations (\verb|max_iter|) is reached. When either condition is reached, the function returns a boolean that indicates whether if the sequence diverges and the number of iterations it take diverges. If the sequence converges, the number of iteration is the maximum number of iterations. This function is then vectorized using \verb|np.vectorize()| which allows me to apply the function to my array of complex numbers and returns a tuple of list. The first list is a list of boolean that contains if a sequence diverged, the second is a list of float that contains number of iterations. Next, I created a mask for complex numbers that diverged with to help with creating plots of $x$ vs $y$ that distinguish between numbers that diverged versus converged. Lastly, I plotted all $x$ and $y$ and set the color argument as the number of iterations to result in the following plot (Fig. \ref{fig:q1}).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{q1.png}
+    \caption{Mandelbrot set. It is a complex plane between $-2 \leq x,y \leq 2$ colored by the number of iterations that a complex number diverges under the sequence $z_{i+1}=z_i^2+c$. We can observe a repeating pattern, such as for the left circle at $-1.5<x<-0.5$, it has smaller circles on the edges that repeat the same smaller circle on edge of bigger circle pattern.}
+    \label{fig:q1}
+\end{figure}
+
+\section*{Question 2}
+First, I created a function (\verb|W_dot|) that takes in time, vector \verb|W = [X, Y, Z]|, $\sigma$, $r$, and $b$, which then returns $\dot{W}=[\dot{X}, \dot{Y}, \dot{Z}]$ where 
+\begin{align}
+    \dot{X}= -\sigma(X-Y) \\
+    \dot{Y}=rX-Y-XZ \\
+    \dot{Z}=-bX=XY
+\end{align}
+Then, I set $\sigma=10, r=28, b=\frac{8}{3}$ (my \verb|param| variable), initial condition $W_0=[0, 1, 0]$, and time interval to integrate over \verb|time_int=(0, 60)|. Using \verb|solve_ivp| from \verb|scipy.integrate|, I pass in the appropriate arguments, \verb|solve_ivp(W_dot, time_int, W0, args=param)|, to obtain solution $W(t)$ over given time interval to the initial value problem.
+
+To replicate Fig. 1 of Lorenz' paper, I created three masks on $N=\frac{t}{0.01}$, and plotted Fig. \ref{fig:q2_1}, which shows how $Y$ behaves at different time intervals. We observe $Y$ to exhibit oscillatory behaviours whose amplitude slowly increases for $50<N<1620$ approximately before settling into a periodic, oscillatory pattern for $1620<N<3000$.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.66\linewidth]{q2(3).png}
+    \caption{Recreation of Figure 1 of Lorenz' paper.}
+    \label{fig:q2_1}
+\end{figure}
+
+Next, to recreate Figure 2 of Lorenz' paper, I set an additional argument to \verb|solve_ivp(..., t_eval=t)|, where \verb|t=np.linspace(14, 19, 1000)| which refines the time interval the ODE solver evaluates over. With the solution, I plotted $Z$ as a function of $Y$, $X$ as a function of $Y$ (where $X$ is inverted to recreate Lorenz' plot) as shown in Fig. \ref{fig:q2_2}. We observe whirly shapes that matches the projection onto $ZY$ and $XY$ planes of a Lorentz attractor between time $14<t<19$.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{q2(4).png}
+    \caption{Recreation of Lorenz' Figure 2.}
+    \label{fig:q2_2}
+\end{figure}
+
+Lastly, we add a smaller perturbation in $Y$ to the initial condition $W_0$. This is done by converting original $W_0$ and perturbation vector $[0, 1\times10^{-8}, 0]$ to an numpy array, where addition is easy to perform with $W_0 + [0, 1\times10^{-8}, 0]$. With the same parameters I used the reproduce Figure 2 of Lorenz' paper and the new initial condition, we have a new set of solutions $W'(t)$. By applying \verb|np.linalg.norm()| on the difference between $W'(t)$ and $W(t)$ vectors, we obtain the distance between the two results, which we can then plot as a function of time to see whether if a smaller perturbation in initial value causes solutions to diverge from each other. From Fig. \ref{fig:q2_3}, we observe small oscillatory motion between $14<t<19$ which appears to grow over time. If we extrapolate, we expect the difference to oscillate, but grow over time. With the limited range in time, we cannot tell whether if the growth is exponential, linear, or follows another trend.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{q2(5).png}
+    \caption{Distance between two solutions with a small perturbation in initial values to the Lorenz' equations.}
+    \label{fig:q2_3}
+\end{figure}
+\end{document}
